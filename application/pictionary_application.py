@@ -3,8 +3,14 @@ from pyscreenshot import grab
 import numpy as np
 import matplotlib.pyplot as plt
 import PIL.ImageOps
+import json
+import random
+from PIL import ImageTk, Image
 
-class Pictionary:
+from application.api_requests import RequestsAPI
+
+
+class Pictionary():
     def __init__(self, master):
         self.master = master
         self.color_fg = 'black'
@@ -14,6 +20,30 @@ class Pictionary:
         self.widgets()
         self.canvas.bind('<B1-Motion>', self.paint)
         self.canvas.bind('<ButtonRelease-1>', self.reset)
+        self.api = RequestsAPI()
+        self.dictionary = json.load(open('resources/dictionary.json'))
+        self.createPredictionWindow()
+        self.predictionText = None
+
+    def createPredictionWindow(self):
+        self.window = Toplevel()
+        self.window.title('Mimir Predictions')
+        self.window.geometry("600x100")
+        image1 = Image.open("resources/icon.png")
+        image1 = image1.resize((75, 75), Image.ANTIALIAS)
+        test = ImageTk.PhotoImage(image1)
+        label1 = Label(self.window, image=test)
+        label1.image = test
+        label1.place(x=5, y=10)
+        self.predictionText = Label(self.window, text=f"Welcome to Pictionary!!!", fg='black',
+                                    font=("Open Sans", 20))
+        self.predictionText.place(x=120, y=30)
+
+    def updatePredictionWindow(self, text):
+        if self.predictionText is not None:
+            self.predictionText.destroy()
+        self.predictionText = Label(self.window, text=text, fg='black', font=("Open Sans", 20))
+        self.predictionText.place(x=120, y=30)
 
     def paint(self, e):
         if self.old_x and self.old_y:
@@ -47,7 +77,6 @@ class Pictionary:
             plt.imshow(loggedPicture, cmap='Greys')
             plt.show()
 
-
         return finalPicture
 
     def screenshot(self):
@@ -70,15 +99,15 @@ class Pictionary:
         # Predict
         self.predict(processedImage)
 
-
     def predict(self, img):
         print('Predicting')
-        print(list(img))
-        modelPrediction = 'Bike'
-        probability = .9
-        predictionText = f'Model Prediction: {modelPrediction} - Probability : {probability}'
-        # self.canvas.create_text(200, 10, font="Times 20 italic bold", text=predictionText, tag = "text")
-        print('Updated Predictions')
+        csvImage = ','.join(img.astype(str))
+
+        # Predict
+        # modelPrediction = self.dictionary[str(self.api.request_prediction(csvImage))]
+        # predictionText = f'Model Prediction: {modelPrediction}.'
+
+        self.updatePredictionWindow(f"The model predicted {random.random()}.")
 
     def clear(self):
         self.canvas.delete(ALL)
