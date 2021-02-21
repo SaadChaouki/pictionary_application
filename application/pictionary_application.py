@@ -104,10 +104,13 @@ class Pictionary():
         csvImage = ','.join(img.astype(str))
 
         # Predict
-        # modelPrediction = self.dictionary[str(self.api.request_prediction(csvImage))]
-        # predictionText = f'Model Prediction: {modelPrediction}.'
+        try:
+            modelPrediction = self.dictionary[str(self.api.request_prediction(csvImage))]
+            predictionText = f'I think this is {modelPrediction} ....           '
+        except:
+            predictionText = 'Oops, seems like Mimir is sleeping.           '
 
-        self.updatePredictionWindow(f"The model predicted {random.random()}.")
+        self.updatePredictionWindow(predictionText)
 
     def clear(self):
         self.canvas.delete(ALL)
