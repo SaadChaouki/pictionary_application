@@ -6,12 +6,13 @@ I created a model that can be used to play Pictionary. The final outcome is an a
 
 The input of the model will be an array representing a 28x28 drawing of the user. Locally, the user is drawing on an application using Tkinter. Whenever the user releases the mouse, the application takes a screenshot of the drawing and converts it to an array of size 784 representing the 28x28 picture. This is then sent to the model to make the prediction. The predictions are then displayed on a different window.
 
-
 **The model is trained and deployed on AWS SageMaker.**
 
-### Pictionary
+  ![Pictionary Application](./resources/drawing%20gif.gif)
 
-![Pictionary Application](./resources/drawing%20gif.gif)
+<p align="center">
+  <img src="./resources/drawing%20gif.gif" />
+</p>
 
 ## Requirements
 * Google Cloud Storage
