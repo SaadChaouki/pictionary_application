@@ -1,7 +1,6 @@
 import requests
 import json
 
-
 class RequestsAPI():
     def __init__(self):
         settings = json.load(open('resources/settings.json'))
