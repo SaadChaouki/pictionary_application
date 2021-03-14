@@ -4,6 +4,6 @@ from tkinter import Tk
 if __name__ == '__main__':
     root = Tk()
     Pictionary(root)
-    root.title('Mimir - Pictionary - Try to beat me!')
+    root.title('Pictionary - Try to beat me!')
     root.mainloop()
 

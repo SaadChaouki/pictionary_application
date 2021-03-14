@@ -27,7 +27,7 @@ class Pictionary():
 
     def createPredictionWindow(self):
         self.window = Toplevel()
-        self.window.title('Mimir Predictions')
+        self.window.title('Predictions')
         self.window.geometry("600x100")
         image1 = Image.open("resources/icon.png")
         image1 = image1.resize((75, 75), Image.ANTIALIAS)
@@ -71,6 +71,7 @@ class Pictionary():
         flattenedPicture *= 255
         # Round
         finalPicture = np.int0(flattenedPicture)
+
         # Displaying
         if display:
             plt.axis(False);
@@ -106,14 +107,17 @@ class Pictionary():
         # Predict
         try:
             modelPrediction = self.dictionary[str(self.api.request_prediction(csvImage))]
-            predictionText = f'I think this is {modelPrediction} ....           '
+            predictionText = f'I think this is {modelPrediction} ....                                   '
         except:
-            predictionText = 'Oops, seems like Mimir is sleeping.           '
+            predictionText = 'Oops, seems like the model is sleeping.           '
 
         self.updatePredictionWindow(predictionText)
 
     def clear(self):
         self.canvas.delete(ALL)
+        self.predictionText = Label(self.window, text=f"Welcome to Pictionary!!!                    ", fg='black',
+                                    font=("Open Sans", 20))
+        self.predictionText.place(x=120, y=30)
 
     def widgets(self):
         # Setting size
