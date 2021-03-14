@@ -11,7 +11,7 @@ The input of the model will be an array representing a 28x28 drawing of the user
 
 ### Pictionary
 
-![Pictionary Application](./resources/drawing%20gif.gif =250x)
+![Pictionary Application](./resources/drawing%20gif.gif)
 
 ## Requirements
 * Google Cloud Storage
