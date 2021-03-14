@@ -8,8 +8,6 @@ The input of the model will be an array representing a 28x28 drawing of the user
 
 **The model is trained and deployed on AWS SageMaker.**
 
-  ![Pictionary Application](./resources/drawing%20gif.gif)
-
 <p align="center">
   <img src="./resources/drawing%20gif.gif" />
 </p>
