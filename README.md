@@ -12,7 +12,7 @@ The input of the model will be an array representing a 28x28 drawing of the user
 
 ### Pictionary
 
- <div style="text-align:center"><img src="https://raw.githubusercontent.com/SaadChaouki/pictionary_application/18f94fc3915a8bee6475b7d7c5fbcf8d252f4ce1/resources/drawing%20gif.gif?token=AOYTVHENUEYAD3YAURBEDALAJXTLS" /></div>
+![Pictionary Application](/resources/drawing%20gif.gif)
 
 ## Requirements
 * Google Cloud Storage
