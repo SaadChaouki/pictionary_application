@@ -1,8 +1,7 @@
 # Pictionary - Can you beat the machine?
 
+ <div style="text-align:center"><img src="https://raw.githubusercontent.com/SaadChaouki/pictionary_application/18f94fc3915a8bee6475b7d7c5fbcf8d252f4ce1/resources/Images.png?token=AOYTVHE4OSJCEPRX5BYWVRTAJXTJU" /></div>
 
- ![Alt text](https://raw.githubusercontent.com/SaadChaouki/pictionary_application/18f94fc3915a8bee6475b7d7c5fbcf8d252f4ce1/resources/drawing%20gif.gif?token=AOYTVHENUEYAD3YAURBEDALAJXTLS
- "")
 
 I created a model that can be used to play Pictionary. The final outcome is an application where a user can draw. As the user is drawing, a model that is hosted on AWS makes predictions to try and classify the drawing. The methodology is a combination of a Neural Network trained and deployed on AWS and a drawing application using Tkinter in Python. The model will be accessed through the use of an API, Lambda function, and Endpoint. 
 
@@ -11,10 +10,9 @@ The input of the model will be an array representing a 28x28 drawing of the user
 
 **The model is trained and deployed on AWS SageMaker.**
 
-## Pictionary
+### Pictionary
 
-![Alt text](https://raw.githubusercontent.com/SaadChaouki/pictionary_application/18f94fc3915a8bee6475b7d7c5fbcf8d252f4ce1/resources/Images.png?token=AOYTVHE4OSJCEPRX5BYWVRTAJXTJU
- "")
+ <div style="text-align:center"><img src="https://raw.githubusercontent.com/SaadChaouki/pictionary_application/18f94fc3915a8bee6475b7d7c5fbcf8d252f4ce1/resources/drawing%20gif.gif?token=AOYTVHENUEYAD3YAURBEDALAJXTLS" /></div>
 
 ## Requirements
 * Google Cloud Storage
@@ -22,6 +20,10 @@ The input of the model will be an array representing a 28x28 drawing of the user
 * Scikit-Learn
 * SageMaker
 
+## References
+* [The Quick, Draw! Dataset](https://github.com/googlecreativelab/quickdraw-dataset)
 
 ## Author
 * Saad Chaouki - sd.chaouki@gmail.com
+
+
